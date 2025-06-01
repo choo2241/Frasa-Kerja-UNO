@@ -341,7 +341,7 @@ function updatePlayerHandDisplay(player, hand) {
 
 function checkIsGame(player) {
   if (player === "A" && playerHands[player] <= 0) {
-    playerScores[player] = 50;
+    playerScores[player] = 40;
     updateScore(player);
   }
 }
