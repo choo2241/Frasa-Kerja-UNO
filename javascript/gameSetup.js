@@ -33,7 +33,7 @@ function updateScore(player) {
       "Pemain " + player + ": " + playerScores[player] + " mata";
   }
 
-  if (playerScores[player] >= 50) {
+  if (playerScores[player] >= 40) {
     window.location.href = "win.html";
   }
 }
