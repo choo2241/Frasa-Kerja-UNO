@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frasa Kerja UNO</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+
+
+
+    </style>
+  
+</head>
+<body>
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+        <div class="player-score"></div>
+        <div id="score-B">Pemain B: 0 mata</div>
+        <div id="score-C">Pemain C: 0 mata</div>
+        <div id="score-D">Pemain D: 0 mata</div>
+        <div class="last-player">
+            <div id="last-player-name"></div>
+            <div id="last-player-card"></div>
+        </div>
+        <div class="your-turn" id="your-turn"></div>
+    </div>
+
+    <div class="game-background">
+        <div class="game-container">
+            
+            
+
+            <!-- Top Player -->
+            <div class="player-top">
+                <div class="ai-player-name">Pemain C  <div  class="player-C-card-count" id="player-C-card-count"></div> </div>
+                <div id="player-C-cards" class="player-cards-ai"></div>
+            </div>
+
+            <!-- Left and Right Players -->
+            <div class="game-sides">
+                <div class="player-left">
+                    <div class="ai-player-name">Pemain D  <div class="player-D-card-count" id="player-D-card-count"></div></div>
+                    <div id="player-D-cards" class="player-cards-ai"></div>
+                </div>
+                <div class="game-center">
+                    <div class="deck">
+                        <button id="draw-card-btn" class="draw-card-btn"><img src="image/cardbackdeck.png" alt="Deck" class="deck-image"></button>
+                        <button id="draw-require-card-btn" class="draw-card-btn" style="display: none;"><img src="image/cardbackdeck.png" alt="Deck" class="deck-image"></button>
+                    </div>
+                    <div class="discard-pile">
+                        <div id="discard-pile-cards" class="player-cards"></div>
+                    </div>
+                </div>
+                <div class="player-right">
+                    <div class="ai-player-name">Pemain B  <div class="player-B-card-count" id="player-B-card-count"></div></div>
+                    <div id="player-B-cards" class="player-cards-ai"></div>
+                </div>
+            </div>
+
+            <!-- Bottom Player -->
+            <div class="player-bottom">
+                <button id="play-card-btn" class="play-card-btn">Main Kad</button>
+                <div class="player-name"></div>
+                <div id="player-A-card-count" style="display: none;"></div>
+                <div id="player-A-cards" class="player-cards"></div>
+            </div>
+
+
+           
+        </div>
+    </div>
+
+
+</body>
+
+
+<script src="javascript/data.js"></script>
+<script src="javascript/cardLogic.js"></script>
+<script src="javascript/gameRole.js"></script>
+<script src="javascript/playerActions.js"></script>
+<script src="javascript/cardGenerator.js"></script>
+<script src="javascript/aiLogic.js"></script>
+<script src="javascript/gameSetup.js"></script>
+<script src="javascript/splittingAction.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const playerName = localStorage.getItem("playerName"); 
+        if (playerName) {
+            document.querySelector(".player-score").innerHTML = playerPlaying + '<span id="score-A">: 0 points</span>';
+            document.querySelector(".player-name").innerHTML = playerPlaying;
+
+            localStorage.removeItem("playerName");
+        } else {
+            window.location.href = "index.html"; 
+            
+        }
+    });
+</script>
+</html>
+
